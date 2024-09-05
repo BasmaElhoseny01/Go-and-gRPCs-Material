@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "wireless_lab_1/grpc/capitalize";
+
+package capitalize;
+
+message TextRequest {
+    string text = 1;
+}
+
+message TextResponse {
+    string capitalized_text = 1;
+}
+
+service TextService {
+    rpc Capitalize(TextRequest) returns (TextResponse);
+}

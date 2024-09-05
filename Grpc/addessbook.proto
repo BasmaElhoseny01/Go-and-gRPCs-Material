@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package addressbook;
+
+// We genetrating the go bindings for this proto buf generate it in folder [server/addressbook]
+option go_package = "server/addressbook";
+
+
+message Person {
+    string name = 1;
+    int32 id = 2;
+    string email = 3;
+
+    enum PhoneType {
+        PHONE_TYPE_UNSPECIFIED = 0;
+        PHONE_TYPE_MOBILE = 1;
+        PHONE_TYPE_HOME = 2;
+        PHONE_TYPE_WORK = 3;
+    }
+    
+    message PhoneNumber {
+    string number = 1;
+    PhoneType type = 2;
+    }
+    
+    repeated PhoneNumber phones = 4;
+}
+
+message AddressBook {
+    repeated Person people = 1;
+}
+
+
+// Define Service
+message ListPersonsRequest{}
+
+message ListPersonsResponse {
+    repeated Person person = 1;
+}
+
+message AddPersonResponse{}
+
+service AddressBookService{
+    rpc ListPersons(ListPersonsRequest) returns (ListPersonsResponse);
+    rpc AddPerson(Person) returns (AddPersonResponse);
+}
+
+// D:\Go Sockets & RPCs\Grpc> protoc --go_out=. --go-grpc_out=. addessbook.proto
