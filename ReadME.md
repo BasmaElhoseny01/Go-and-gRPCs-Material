@@ -56,4 +56,4 @@ A comprehensive guide covering sockets and RPC concepts.
 </table>
 
 ## <img align= center height=60px src="https://www.medwayadvice.org.uk/application/files/2616/2634/3428/Citizens_Advice_Medway_Law_Book.gif"> License <a id="license"></a>
-This software is licensed under the [MIT License](https://github.com/BasmaElhoseny01/Go-and-gRPCs-Material/blob/main/LICENSE). © Basma Elhoseny.
+This software is licensed under the [MIT License](https://github.com/BasmaElhoseny01/Go-and-gRPCs-Material/blob/master/LICENSE). © Basma Elhoseny.
